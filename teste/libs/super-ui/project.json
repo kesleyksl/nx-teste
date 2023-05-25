@@ -1,0 +1,25 @@
+{
+  "name": "super-ui",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/super-ui/src",
+  "prefix": "teste",
+  "targets": {
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "tsConfig": "libs/super-ui/tsconfig.spec.json",
+        "karmaConfig": "libs/super-ui/karma.conf.js",
+        "polyfills": ["zone.js", "zone.js/testing"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/super-ui/**/*.ts", "libs/super-ui/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}
